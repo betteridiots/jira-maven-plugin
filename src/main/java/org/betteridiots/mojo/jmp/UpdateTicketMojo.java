@@ -104,7 +104,6 @@ public class UpdateTicketMojo extends AbstractMojo
             // Log Parameters
             getLog().info( "JIRA Host is: " + host );
             getLog().info( "JIRA user is: " + user );
-            getLog().info( "JIRA password is: " + password );
             getLog().info( "JIRA transition is: " + transition );
             getLog().info( "JIRA issue is: " + issue );
         
