@@ -126,7 +126,7 @@ public class UpdateTicketMojo extends AbstractMojo
 	        	    byte[] encoded = Files.readAllBytes(Paths.get(descriptionFile));
                             if (encoded.length < 10240) {
 	        	        description = charset.decode(ByteBuffer.wrap(encoded)).toString();
-                            else {
+                            }else {
 	        	        description = charset.decode(ByteBuffer.wrap(encoded, 0, 10240)).toString();
                             }
 	            }catch(IOException e) {
