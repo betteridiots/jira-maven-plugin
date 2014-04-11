@@ -124,7 +124,11 @@ public class UpdateTicketMojo extends AbstractMojo
 	            Charset charset = StandardCharsets.UTF_8;
 	            try {
 	        	    byte[] encoded = Files.readAllBytes(Paths.get(descriptionFile));
-	        	    description = charset.decode(ByteBuffer.wrap(encoded, 0, 10240)).toString();
+                            if (encoded.length < 10240) {
+	        	        description = charset.decode(ByteBuffer.wrap(encoded)).toString();
+                            else {
+	        	        description = charset.decode(ByteBuffer.wrap(encoded, 0, 10240)).toString();
+                            }
 	            }catch(IOException e) {
 	        	    getLog().error (" Caught IOException while trying to write file" + descriptionFile);
 	            }
