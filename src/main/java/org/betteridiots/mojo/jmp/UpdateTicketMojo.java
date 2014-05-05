@@ -60,6 +60,10 @@ public class UpdateTicketMojo extends AbstractMojo
     @Parameter( property = "update-ticket.password", defaultValue = "foo" )
     private String password;
 
+    // Jira Server ID
+    @Parameter( property = "update.ticket.serverId", defaultValue = "jira" )
+    private String serverId;
+
     // JIRA Host
     @Parameter( property = "update-ticket.host", defaultValue = "localhost" )
     private String host;
@@ -94,9 +98,9 @@ public class UpdateTicketMojo extends AbstractMojo
             String pluginId = "update-ticket";
             // Inspect settings.xml for username and password if none provided as a parameter
             //if ((user == "foo") || (password == "foo")){
-                getLog().info("Using creditials in settings.xml for " + pluginId);
+                getLog().info("Using creditials in settings.xml for " + serverId);
                 //Settings mavenSettings = new Settings();
-                Server jiraServer = settings.getServer(pluginId);
+                Server jiraServer = settings.getServer(serverId);
                 user = jiraServer.getUsername();
                 password = jiraServer.getPassword();
 	    //}

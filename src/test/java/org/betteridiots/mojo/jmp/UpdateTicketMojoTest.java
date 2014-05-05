@@ -19,10 +19,10 @@ public class UpdateTicketMojoTest extends AbstractMojoTestCase
         // Check for null values
         assertNotNull( mojo );
         assertNotNull( getVariableValueFromObject( mojo, "host" ) );
-        assertNotNull( getVariableValueFromObject( mojo, "user" ) );
-        assertNotNull( getVariableValueFromObject( mojo, "password" ) );
+//        assertNotNull( getVariableValueFromObject( mojo, "user" ) );
+//        assertNotNull( getVariableValueFromObject( mojo, "password" ) );
 
         // Execute mojo test
-        //mojo.execute();
+        mojo.execute();
     }
 }
