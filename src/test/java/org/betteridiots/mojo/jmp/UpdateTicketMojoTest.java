@@ -23,6 +23,6 @@ public class UpdateTicketMojoTest extends AbstractMojoTestCase
 //        assertNotNull( getVariableValueFromObject( mojo, "password" ) );
 
         // Execute mojo test
-        mojo.execute();
+//        mojo.execute();
     }
 }
